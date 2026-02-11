@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jason | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+  <h1>I'm JASON <span class="article"></span> <span class="auto-type"></span></h1>
+</div>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script>
+var roles = [
+  "Web Developer",
+  "Programmer",
+  "Ethical Hacker",
+  "Event Organizer",
+  "UI/UX Designer",
+  "Gamer",
+  "Digital Strategist",
+  "Proud FC Barcelona Fan"
+  
+];
+
+var typed = new Typed(".auto-type", {
+  strings: roles,
+  typeSpeed: 120,
+  backSpeed: 80,
+  backDelay: 1500,
+  loop: true,
+  onStringTyped: function(arrayPos) {
+    var currentWord = roles[arrayPos];
+    var firstLetter = currentWord.charAt(0).toLowerCase();
+    var article = "a";
+
+    if (["a","e","i","o","u"].includes(firstLetter)) {
+      article = "an";
+    }
+
+    document.querySelector(".article").textContent = article;
+  }
+});
+</script>
+
+</body>
+</html>
